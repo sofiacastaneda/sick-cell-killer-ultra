@@ -70,14 +70,17 @@
   </div>
 
   <script>
-    var count = 0;
+    var localCount = localStorage.getItem('cells');
+    var count = localCount ?? 0;
     var counterElement = document.getElementById('counter');
     var button = document.getElementById('counterBtn');
     var infoBtn = document.getElementById('infoBtn');
     var infoBox = document.getElementById('infoBox');
 
+    
     button.addEventListener('click', function() {
       count++;
+      localStorage.setItem('cells', count);
       counterElement.innerText = '+' + count;
     });
 
