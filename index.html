@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Counter</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    .container {
+      text-align: center;
+      padding-top: 50px;
+    }
+    #counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 168px;
+    }
+    #counter .plus-sign {
+      font-size: 168px;
+      margin-right: 5px;
+    }
+    .info-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: none;
+      border: none;
+      color: #6c757d;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .info-box {
+      font-size: 10px;
+      display: none;
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      margin-bottom: 0;
+      background-color: #f8f9fa;
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+      text-align: left;
+      z-index: 9999;
+    }
+    .show {
+      display: block !important;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>sick cell</h1>
+    <h1>killer ultra™</h1>
+    <h2>(•̀ᴗ•́)و ̑̑</h2>
+    <br>
+    <h5>dead cells so far:</h5>
+    <h1 id="counter"><span class="plus-sign">+</span>0</h1>
+    <button id="counterBtn" class="btn btn-dark btn-lg">heal me</button>
+  </div>
+
+  <div class="text-center">
+    <button id="infoBtn" class="info-btn">?</button>
+    <div id="infoBox" class="info-box">
+      <p>how does this work? witchcraft = sudo privileges to your body duh</p>
+    </div>
+  </div>
+
+  <script>
+    var count = 0;
+    var counterElement = document.getElementById('counter');
+    var button = document.getElementById('counterBtn');
+    var infoBtn = document.getElementById('infoBtn');
+    var infoBox = document.getElementById('infoBox');
+
+    button.addEventListener('click', function() {
+      count++;
+      counterElement.innerText = '+' + count;
+    });
+
+    infoBtn.addEventListener('click', function() {
+      infoBox.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
