@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>(•̀ᴗ•́)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -75,25 +75,24 @@
     </div>
 
     <script>
-      const localCount = localStorage.getItem("count") 
+      const localCount = localStorage.getItem('count');
 
-      console.log(new Date().toLocaleString(), localCount);
-      const count = localCount ? parseInt(localCount) : 0;
-      
-      const counterElement = document.getElementById("counter");
-      counterElement.innerText = "+" + count;
-      const button = document.getElementById("counterBtn");
-      const infoBtn = document.getElementById("infoBtn");
-      const infoBox = document.getElementById("infoBox");
+      let count = localCount ? parseInt(localCount) : 0;
 
-      button.addEventListener("click", function () {
+      const counterElement = document.getElementById('counter');
+      counterElement.innerText = '+' + count;
+      const button = document.getElementById('counterBtn');
+      const infoBtn = document.getElementById('infoBtn');
+      const infoBox = document.getElementById('infoBox');
+
+      button.addEventListener('click', function () {
         count++;
-        window.localStorage.setItem("count", count);
-        counterElement.innerText = "+" + count;
+        window.localStorage.setItem('count', count);
+        counterElement.innerText = '+' + count;
       });
 
-      infoBtn.addEventListener("click", function () {
-        infoBox.classList.toggle("show");
+      infoBtn.addEventListener('click', function () {
+        infoBox.classList.toggle('show');
       });
     </script>
   </body>
